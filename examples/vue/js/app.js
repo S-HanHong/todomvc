@@ -24,13 +24,16 @@
 
 		// the root element that will be compiled
 		el: '.todoapp',
+		vuetify: new Vuetify(),
 
 		// app initial state
 		data: {
 			todos: todoStorage.fetch(),
 			newTodo: '',
 			editedTodo: null,
-			visibility: 'all'
+			visibility: 'all',
+			date: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
+			menu: [],
 		},
 
 		// watch todos change for localStorage persistence
@@ -75,8 +78,9 @@
 				if (!value) {
 					return;
 				}
+				var date = (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10);
 				// TODO: Use a proper UUID instead of `Date.now()`.
-				this.todos.push({ id: Date.now(), title: value, completed: false });
+				this.todos.push({ id: Date.now(), title: value, completed: false, rank: 1, dueDate: date });
 				this.newTodo = '';
 			},
 

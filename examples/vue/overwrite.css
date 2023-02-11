@@ -1,0 +1,22 @@
+.todoapp {
+	box-sizing: unset;
+}
+
+.todoapp h1 {
+	margin-top: 83px;
+}
+
+.accent {
+    background-color: #005caf !important;
+    border-color: #005caf !important;
+}
+
+.accent--text {
+    color: #005caf !important;
+    caret-color: #005caf !important;
+}
+
+.primary {
+    background-color: #1867c0 !important;
+    border-color: #1867c0 !important;
+}
